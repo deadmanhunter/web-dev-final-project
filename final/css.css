@@ -1,0 +1,85 @@
+body /**/
+{
+	min-width: 980px;
+	width: 980px;
+	max-width: 100%;
+	margin: auto;
+	padding: 0px;
+	overflow: auto;
+}
+
+.menu
+{
+    height: auto;
+	margin: 10px 10px 10px 10px;
+	padding: 0px 0px 0px 0px;
+	overflow: auto;
+}
+
+.navi /**/
+{
+
+	text-align:center;
+	font-family: "Times New Roman",Georgia,Serif;
+	font-size: 13pt;
+
+}
+
+.navi .list /**/
+{
+
+	display: inline-block;
+	position: relative;
+	float: left;
+}
+
+.navi .list .linked /**/
+{
+	display: block;
+	color: #f00;
+	padding: 10px 25px 10px 25px;
+	margin: auto;
+	background:#000;
+	margin-left: 1px;
+	white-space: nowrap;
+}
+
+.navi .list .linked:hover /**/
+{
+	background: #fff;
+}
+
+.list:hover .navi /**/
+{
+	display: block;
+	position: absolute;
+
+}
+
+.list:hover .list /**/
+{
+	float: none;
+	font-size: 11px;
+	overflow: auto;
+}
+
+p /**/
+{ 
+	text-align: justify;
+}
+
+h1 /**/
+{
+	color: #f00;
+	font-size: 20pt;
+	text-align: center;
+}
+
+footer
+{
+	text-align: center;
+	background: #fff;
+	        padding: 5px 0px 5px 0px;
+        margin: 5px 2px 5px 2px;
+        overflow: auto;
+}

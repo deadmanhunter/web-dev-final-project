@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grandmaster Test</title>
+	<link rel="stylesheet" href="css.css"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+</head>
+
+
+
+<body class="body">
+
+	<h1>Welcome to the Gamiverse</h1>
+
+	<div class="menu">
+		<ul class="navi">
+			<li class="list"><a class="linked" href="index.html">Home</a></li>
+			<li class="list"><a class="linked" href="new.html">New Releases</a></li>
+			<li class="list"><a class="linked" href="pop.html">Most Popular</a></li>
+			<li class="list"><a class="linked" href="upcoming.html">Upcoming Releases</a></li>
+			<li class="list"><a class="linked" href="locate.html">Find a Store</a></li>
+			<li class="list"><a class="linked" href="search.html">Search</a></li>
+		</ul>
+	</div>
+
+	<div>
+
+		<input type="text" id="gsearch" value="Search by Title" ></input>
+		<input type="button" id="gbutton" onclick="gamesearch()"></input>
+
+	</div>
+
+	<div align="center">
+		<p style="text-align:center">Developed by Adam Sasi, powered by:</p>
+		<a href="http://www.giantbomb.com" target="_blank"><img src="giantbomb.png", width="10%"></a>
+	</div>
+
+	<div id="test">
+
+	</div>
+	<script type="text/javascript">
+		function gamesearch() {
+			$.ajax({
+                    url: "http://api.giantbomb.com/search/",
+                    dataType: "jsonp",
+                    jsonp: 'json_callback',
+                    data: {
+                        api_key: '79b5703be280a5e4d1e4ae5b0f8c5b9a607b7d6c',
+                        query: 'mass effect',
+                        format: 'jsonp',
+                        limit: '5',
+                        page: '1',
+                        field_list: "api_detail_url,image,deck,game",
+                        resources: 'game'
+                    },
+                    success: function(res) {
+                    	if(true){
+	                        document.getElementById("searchresults").innerHTML = "";
+	                        $(document.getElementById("searchresults")).append('<h1>' + res.number_of_total_results);
+                    	}
+
+                    	var games = res.results;
+
+                    	$.each(games, function(i, game){
+
+
+
+                    	});
+
+
+
+                    }
+                });
+		
+		}
+
+
+
+		
+
+	</script>
+
+</body>

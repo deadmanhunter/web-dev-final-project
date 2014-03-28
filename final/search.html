@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grandmaster Sasies Gamiverse</title>
+	<link rel="stylesheet" href="css.css"> 
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		function gamesearch() {
+			$.ajax({
+                    url: "http://api.giantbomb.com/search/",
+                    dataType: "jsonp",
+                    jsonp: 'json_callback',
+                    data: {
+                        api_key: '79b5703be280a5e4d1e4ae5b0f8c5b9a607b7d6c',
+                        query: "mass effect",
+                        format: 'jsonp',
+                        limit: '10',
+                        page: '1',
+                        field_list: "image,deck,name",
+                        resources: 'game'
+                    },
+                    success: function(res) {
+                    	if(true){
+	                        document.getElementById("searchresults").innerHTML = "";
+	                        $(document.getElementById("searchresults")).append('<h1>Results:' + res.number_of_total_results + '</h1>');
+                    	}
+
+
+                    	var games = res.results;
+
+                    	$.each(games, function(i, game){
+                    		var i = i + 1;
+
+                    		$(document.getElementById("games")).append(
+                    		'<table border="0">' +
+                    			'<tr>' +
+                    				"<td width='150' align='center' valign='top' style='padding-left:'4px'>" +
+                    					'<img src="' + games.medium_url + '" border="0" width="120" align="left" />' +
+                    				'</td>' +
+                    				'<td width="680" valign="top" align="left">' +
+                    					'<h1>Published on:' + games.date_added + '</h1></br>' +
+                    					'<h1>About:' + games.deck + '</h1></br>' +
+                    				'</td>' +
+                    			'</tr>' +
+                    		'</table>');
+
+                    	});
+
+
+                    }
+                });
+		
+		}
+
+
+
+		
+
+	</script>
+</head>
+
+
+
+<body class="body">
+
+	<h1>Welcome to the Gamiverse</h1>
+
+	<div class="menu">
+		<ul class="navi">
+			<li class="list"><a class="linked" href="index.html">Home</a></li>
+			<li class="list"><a class="linked" href="new.html">New Releases</a></li>
+			<li class="list"><a class="linked" href="pop.html">Most Popular</a></li>
+			<li class="list"><a class="linked" href="upcoming.html">Upcoming Releases</a></li>
+			<li class="list"><a class="linked" href="locate.html">Find a Store</a></li>
+			<li class="list"><a class="linked" href="search.html">Search</a></li>
+		</ul>
+	</div>
+
+	<div align="center">
+
+		<input type="text" id="gsearch" value="Search by Title" ></input>
+		<input type="button" id="gbutton" onclick="gamesearch()"></input>
+
+	</div>
+
+
+
+
+
+
+
+	<div id="searchresults"> 
+
+	</div>
+
+	<div align="center">
+		<p style="text-align:center">Developed by Adam Sasi, powered by:</p>
+		<a href="http://www.giantbomb.com" target="_blank"><img src="giantbomb.png", width="10%"></a>
+	</div>
+
+
+
+
+
+</body>
