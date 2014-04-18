@@ -1,5 +1,4 @@
 
-
 // function dbpost(){
 //     $.ajax({
 //         type: "POST",
@@ -21,7 +20,7 @@ function gamesearch() {
         dataType: "jsonp",
         jsonp: 'json_callback',
         data: {
-            api_key: '79b5703be280a5e4d1e4ae5b0f8c5b9a607b7d6c',
+            api_key: '',
             query: $("#gsearch").val(),
             format: 'jsonp',
             limit: '10',
@@ -102,7 +101,7 @@ function newgames(date) {
             dataType: "jsonp",
             jsonp: 'json_callback',
             data: {
-                api_key: '79b5703be280a5e4d1e4ae5b0f8c5b9a607b7d6c',
+                api_key: '',
                 filter: date,
                 format: 'jsonp',
                 limit: '20',
