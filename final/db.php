@@ -11,7 +11,7 @@
 
 	<h1>Welcome to the Gamiverse</h1>
 
-	<div class="menu">
+	<div class="menu" align="center">
 			<ul class="navi">
 				<li class="list"><a class="linked" href="index.html">Home</a></li>
 				<li class="list"><a class="linked" href="new.html">New Releases</a></li>
@@ -22,10 +22,40 @@
 			</ul>
 	</div>
 
-	<div align="center">
-<iframe width="600" height="450" frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/search?q=video%20game%20store&key=AIzaSyD5v6lvoVAUFNs9VHFoWg88W_gzSPxeP3g"></iframe> 
-	</div>
+
+	<?php
+	// Connect to MySQL
+	    require ('../finalconn.php'); // for iPage
+	    //require ('../../../../mysqli_connect.php'); 
+
+
+
+
+	if (mysqli_connect_errno())
+	  {
+	  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	  }
+
+
+	$result = mysqli_query($con, "SELECT * FROM searches");
+
+	echo "<table border='1' align='center' text-color='#f00'>
+	<tr>
+		<th>Others have searched for</th>
+	</tr>";
+
+	while($row = mysqli_fetch_array($result)){
+		echo "<tr>";
+		echo "<td>" . $row['searched'] . "</td>";
+		echo "</tr>";
+	}
+
+	echo "</table>";
+
+
+		mysqli_close($con);
+	?>
+	
 
 	<div align="center">
 		<p style="text-align:center">Developed by Adam Sasi, powered by:</p>

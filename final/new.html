@@ -3,6 +3,10 @@
 <head>
 	<title>Grandmaster Sasies Gamiverse</title>
 	<link rel="stylesheet" href="css.css"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script src="../js/api.js"></script>
+
+
 </head>
 
 
@@ -11,15 +15,30 @@
 
 	<h1>Welcome to the Gamiverse</h1>
 
-	<div class="menu">
+	<div class="menu" align="center">
 			<ul class="navi">
 				<li class="list"><a class="linked" href="index.html">Home</a></li>
 				<li class="list"><a class="linked" href="new.html">New Releases</a></li>
-				<li class="list"><a class="linked" href="pop.html">Most Popular</a></li>
 				<li class="list"><a class="linked" href="upcoming.html">Upcoming Releases</a></li>
 				<li class="list"><a class="linked" href="locate.html">Find a Store</a></li>
-				<li class="list"><a class="linked" href="search.html">Search</a></li>
+				<li class="list"><a class="linked" href="search.php">Search</a></li>
+				<li class="list"><a class="linked" href="db.php">Recent Searches</a></li>
 			</ul>
+	</div>
+
+
+	<script type="text/javascript">
+		newgames(getNextWeeksDate(-1));
+		newgames(getNextWeeksDate(-2));
+		newgames(getNextWeeksDate(-3));
+		newgames(getNextWeeksDate(-4));
+		newgames(getNextWeeksDate(-5));
+		newgames(getNextWeeksDate(-6));
+		newgames(getNextWeeksDate(-7));
+	</script>
+	
+	<div id="searchresults"> 
+
 	</div>
 
 	<div align="center">

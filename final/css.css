@@ -11,7 +11,7 @@ body /**/
 .menu
 {
     height: auto;
-	margin: 10px 10px 10px 10px;
+	margin: 10px 10px 20px 20px;
 	padding: 0px 0px 0px 0px;
 	overflow: auto;
 }
@@ -82,4 +82,20 @@ footer
 	        padding: 5px 0px 5px 0px;
         margin: 5px 2px 5px 2px;
         overflow: auto;
+}
+
+h2
+{
+	color: #000;
+	font-size: 15;
+	text-align: center;
+
+}
+
+h3
+{
+	color: #f00;
+	font-size: 12;
+	text-align: center;
+
 }
